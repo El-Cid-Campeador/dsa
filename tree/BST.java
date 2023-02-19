@@ -48,7 +48,6 @@ public class BST {
                 Tree min = minValue(T.right);
                 T.key = (min).key;
                 T.right = delete(T.right, (min).key);
-                
             } else {
                 if (T.left == null){
                     T = T.right;
