@@ -40,43 +40,41 @@ public class AVL {
     public static Tree rebalance(Tree T, int k) {
         int bf = BF(T);
 
+        if (bf < -1) {
+            if (BF(T.right) < 0) {
+                T = RotateLeft(T);
+            } else {
+                T.right = RotateRight(T.right);
+                T = RotateLeft(T);
+            }
+        }
+
+        if (bf > 1) {
+            if (BF(T.left) > 0) {
+                T = RotateRight(T);
+            } else {
+                T.left = RotateLeft(T.left);
+                T = RotateRight(T);
+            }
+        }
+
+        // if (bf > 1) {
+        //     if (k < T.left.key) {
+        //       T = RotateRight(T);
+        //     } else {
+        //       T.left = RotateLeft(T.left);
+        //       T = RotateRight(T);
+        //     }
+        // }
+
         // if (bf < -1) {
-        //     if (BF(T.right) < 0) {
+        //     if (k > T.right.key) {
         //         T = RotateLeft(T);
         //     } else {
         //         T.right = RotateRight(T.right);
         //         T = RotateLeft(T);
         //     }
         // }
-
-        // if (bf > 1) {
-        //     if (BF(T.left) > 0) {
-        //         T = RotateRight(T);
-        //     } else {
-        //         T.left = RotateLeft(T.left);
-        //         T = RotateRight(T);
-        //     }
-        // }
-
-        if (bf > 1) {
-            if (k < T.left.key) {
-              T = RotateRight(T);
-            // } else if (k > T.left.key) {
-            } else {
-              T.left = RotateLeft(T.left);
-              T = RotateRight(T);
-            }
-        }
-
-        if (bf < -1) {
-            if (k > T.right.key) {
-                T = RotateLeft(T);
-            // } else if (k < T.right.key) {
-            } else {
-                T.right = RotateRight(T.right);
-                T = RotateLeft(T);
-            }
-        }
 
         return T;
     }
