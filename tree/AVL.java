@@ -86,7 +86,7 @@ public class AVL {
     public static Tree insertAVL(Tree T, int k) {
         T = BST.insert(T, k);
 
-        T.height = 1 + Math.max(height(T.left), height(T.right));
+        updateHeight(T);
 
         return rebalance(T, k);
     }
@@ -94,7 +94,7 @@ public class AVL {
     public static Tree deleteAVL(Tree T, int k) {
         T = BST.delete(T, k);
 
-        T.height = 1 + Math.max(height(T.left), height(T.right));
+        updateHeight(T);
 
         return rebalance(T, k);
     }
