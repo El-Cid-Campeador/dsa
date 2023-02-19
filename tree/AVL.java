@@ -15,13 +15,17 @@ public class AVL {
         return height(T.left) - height(T.right);
     }
 
+    public static void updateHeight(Tree T) {
+        T.height = 1 + Math.max(height(T.left), height(T.right));
+    }
+
     public static Tree RotateLeft(Tree x) {
         Tree y = x.right;
         x.right = y.left;
         y.left = x;
 
-        x.height = 1 + Math.max(height(x.left), height(x.right));
-        y.height = 1 + Math.max(height(y.left), height(y.right));
+        updateHeight(x);
+        updateHeight(y);
 
         return y;
     }
@@ -31,8 +35,8 @@ public class AVL {
         y.left = x.right;
         x.right = y;
 
-        y.height = 1 + Math.max(height(y.left), height(y.right));
-        x.height = 1 + Math.max(height(x.left), height(x.right));
+        updateHeight(y);
+        updateHeight(x);
 
         return x;
     }
