@@ -24,10 +24,10 @@ public class Queue {
         if (this.isFull()) {
             throw new Error("Full");
         }
-        if (this.head == -1) {
-            head = 0;
-            this.arr[this.head] = d;
-        } 
+        if (isEmpty()) {
+            this.arr[++this.head] = v;
+            ++this.tail;
+        }
         this.tail += 1;
         this.arr[this.tail] = d;
     }
