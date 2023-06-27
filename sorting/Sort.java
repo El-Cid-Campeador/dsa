@@ -62,5 +62,4 @@ public class Sort {
     }
 }
 
-// javac -d . sorting/Sort.java
-// java sorting/Sort
+// javac -d . sorting/Sort.java && java sorting/Sort

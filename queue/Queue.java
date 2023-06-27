@@ -25,7 +25,7 @@ public class Queue {
             throw new Error("Full");
         }
         if (isEmpty()) {
-            this.arr[++this.head] = v;
+            this.arr[++this.head] = d;
             ++this.tail;
         }
         this.tail += 1;

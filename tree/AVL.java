@@ -124,4 +124,4 @@ public class AVL {
     }
 }
 
-// javac -d . tree/AVL.java; java tree/AVL
+// javac -d . tree/AVL.java && java tree/AVL
