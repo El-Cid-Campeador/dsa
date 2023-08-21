@@ -3,7 +3,9 @@ package power;
 public class Test {
     public static int pow(int x, int n) {
         int res = 1;
+        
         if (n == 0 ) return 1;
+
         while (n > 1) {
             if (n % 2 == 0) {
                 x = x * x;
@@ -14,11 +16,13 @@ public class Test {
                 n = (n - 1) / 2;
             }
         }
+
         return res * x;
     }
+    
     public static void main(String[] args) {
         System.out.println(pow(3, 5));
     }
 }
 
-// javac -d . power/Test.java; java power/Test
+// javac -d . power/Test.java && java power/Test

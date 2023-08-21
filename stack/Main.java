@@ -21,4 +21,4 @@ public class Main {
     }
 }
 
-// javac -d . stack/Main.java; java stack/Main.java
+// javac -d . stack/Main.java && java stack/Main.java

@@ -5,6 +5,7 @@ public class AVL {
         if (T == null){
             return -1;
         } 
+        
         return T.height;
     }
 
@@ -12,6 +13,7 @@ public class AVL {
         if (T == null) {
             return 0;
         }
+
         return height(T.left) - height(T.right);
     }
 
@@ -102,7 +104,9 @@ public class AVL {
     public static void inOrder(Tree T) {
         if (T != null) {
             inOrder(T.left);
+
             System.out.print(T.key + " ");
+            
             inOrder(T.right);
         }
     }

@@ -21,4 +21,4 @@ public class Main {
     }
 }
 
-// javac -d . queue/Main.java; java queue/Main.java
+// javac -d . queue/Main.java && java queue/Main.java

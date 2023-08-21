@@ -4,6 +4,7 @@ public class BST {
     public static Tree insert(Tree T, int k) {
         if (T == null) {
             T = new Tree(k);
+
             return T;
         }
 
@@ -19,7 +20,9 @@ public class BST {
     public static void inOrder(Tree T) {
         if (T != null) {
             inOrder(T.left);
+
             System.out.print(T.key + " ");
+            
             inOrder(T.right);
         }
     }
@@ -56,6 +59,7 @@ public class BST {
                 }
             }
         }
+        
         return T;
     }
 
@@ -66,11 +70,13 @@ public class BST {
         
         if (T.key == k) {
             return T;
-        } else if (T.key > k) {
-            return search(T.left, k);
-        } else {
-            return search(T.right, k);
         }
+        
+        if (T.key > k) {
+            return search(T.left, k);
+        }
+            
+        return search(T.right, k);
     }
     
     public static void main(String[] args) {
@@ -100,4 +106,4 @@ public class BST {
     }
 }
 
-// javac -d . tree/BST.java; java tree/BST
+// javac -d . tree/BST.java && java tree/BST
